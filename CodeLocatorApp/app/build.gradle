@@ -1,7 +1,10 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'me.ele.lancet'
+def test = true
+if (test){
+    apply plugin: 'me.ele.lancet'
+}
 
 android {
     compileSdkVersion COMPILE_SDK_VERSION as int
@@ -57,11 +60,11 @@ dependencies {
         if (useSupport) {
             implementation "com.bytedance.tools.codelocator:codelocator-core-support:$codelocator_version"
             debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-xml-support:$codelocator_version"
-            debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-activity-support:$codelocator_version"
-            debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-view-support:$codelocator_version"
-            debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-toast-support:$codelocator_version"
-            debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-dialog-support:$codelocator_version"
-            debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-popup-support:$codelocator_version"
+//            debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-activity-support:$codelocator_version"
+//            debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-view-support:$codelocator_version"
+//            debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-toast-support:$codelocator_version"
+//            debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-dialog-support:$codelocator_version"
+//            debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-popup-support:$codelocator_version"
         } else {
             implementation "com.bytedance.tools.codelocator:codelocator-core:$codelocator_version"
             debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-xml:$codelocator_version"
@@ -72,5 +75,5 @@ dependencies {
             debugImplementation "com.bytedance.tools.codelocator:codelocator-lancet-popup:$codelocator_version"
         }
     }
-    compileOnly 'me.ele:lancet-base:1.0.6'
+    compileOnly 'me.ele:lancet-base:1.0.8-SNAPSHOT'
 }
